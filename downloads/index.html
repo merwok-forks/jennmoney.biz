@@ -1,0 +1,95 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>jennmoneydollars &bull; serious business LLC esq VIP</title>
+  <style>
+    html { margin: 0; padding: 0; border-top: 10px solid cyan; }
+    body { width: 100%; max-width: 900px; margin: 20px auto; font-family: monospace; font-size: 16px; line-height: 1.5em; }
+    a { color: blue; text-decoration: none; }
+    h1 { font-size: 4em; }
+    h1 em { color: magenta; font-size: .3em; }
+    h3 { font-size: 3em; line-height: .7em; }
+    ul { margin: 20px 0; padding: 0; list-style: none; }
+    li { margin: 1em 0; color: #666; text-align: right; }
+    li a { display: block; padding: 10px 20px; background: cyan; color: black; text-align: left; font-size: 1.2em; }
+    li a:hover { color: white; background: black!important; /* lol so important yo */ }
+    #links section.downloads {max-width: 100%; margin: 20px; }
+    img.right { float: right; margin: 0 0 10px 10px; border: 10px solid lime;  }
+    footer,
+    .pals { clear: both; }
+    .pals li { display: inline-block; margin: .5em; }
+    .pals li a { display: inline-block; }
+    .pals img { height: 50px; }
+    .fire { height: 50px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Jenn Schiffer<em> engineer, artist, writer</em></h1>
+  </header>
+  
+  <section id="breadcrumbs">
+    &lt;--- <a href="/">go back home</a>
+  </section>
+
+  <div id="links">
+    <section class="downloads current">
+      <h3>cool <img src="../assets/free.gif" style="height:40px;" alt="free" /> downloads!</h3>
+      <ul>
+	      <li><a href="3x5pixel.ttf">3x5pixel.ttf</a> pixel monospace font designed in make8bitart.com wowowow</li>
+      </ul>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2015 jenn schiffer</p>
+  </footer>
+
+  <script type="text/javascript">
+    (function(){
+      var neonColors = [
+        '#ff00ff',
+        '#00ffff',
+        '#00ff00',
+        '#ffff00',
+        '#ff0000',
+        '#0000ff',
+        '#7920FF',
+        '#FD0987',
+        '#FF3300',
+        '#FF6EC7',
+        '#00FF66',
+        '#4D4DFF',
+        '#67C8FF',
+        '#7BFB2D', // test double zomg neon green™
+        '#AAFF00',
+        '#FF00AA',
+        '#AA00FF',
+        '#FF7F00',
+        '#228DFF',
+        '#ff6d38',
+        '#f90000',
+        '#fd8b25',
+        '#25d7fb',
+        '#7920ff',
+        '#fe51c3',
+        '#ff9072',
+        '#ff63a2',
+        '#e3e641',
+      ];
+
+      var links = document.getElementById('links');
+      var linkItems = links.getElementsByTagName('a');
+
+      for ( var i = 0; i < linkItems.length; i++ ) {
+        linkItems[i].style.backgroundColor = neonColors[ Math.floor(Math.random() * (neonColors.length + 1)) ];
+      }
+    })();
+  </script>
+
+  <script src="//pmetrics.performancing.com/js" type="text/javascript"></script>
+  <script type="text/javascript">try{ clicky.init(23177); }catch(e){}</script>
+  <noscript><p><img alt="Performancing Metrics" width="1" height="1" src="//pmetrics.performancing.com/23177ns.gif" /></p></noscript>
+</body>
+</html>
