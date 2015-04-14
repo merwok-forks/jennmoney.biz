@@ -16,7 +16,9 @@
     #links section.me { float: left; width: 400px; max-width: 100%; margin: 20px; }
     #links section.other { font-size: .8em; }
     #links section.other li a { padding: padding: 5px 10px; }
-    img.right { float: right; margin: 0 0 10px 10px; border: 10px solid lime;  }
+    img.left { float: left; margin: 0 20px 10px 0; border: 10px solid lime; width: 350px; }
+    div.right { float: right; padding: 10px; font-weight: bold; text-align: right; width: 200px; }
+    div.right a { background-color: yellow; }
     footer,
     .pals { clear: both; }
     .pals li { display: inline-block; margin: .5em; }
@@ -28,16 +30,24 @@
 <body>
 
   <header>
-    <h1>Jenn Schiffer<em> engineer, artist, writer</em></h1>
+    <h1>Jenn Schiffer<em> engineer, artist, lasagna, writer</em></h1>
   </header>
 
   <section id="bio">
 
-    <img src="assets/me2.gif" class="right" />
+    <img src="assets/me2.gif" class="left" />
 
     <p>Hi, I'm Jenn, aka jennmoneydollars. I'm a web developer who lives in New Jersey on purpose and works full-time as an open web engineer at <a href="http://bocoup.com">Bocoup</a>. When I'm not building open web apps with the coolest web developers and clients in the game, I'm making art with code, telling jokes, and getting yelled at on the Internet.</p>
 
-    <p>In a past life, I was a senior front-end developer at the <a href="http://stats.nba.com">NBA</a> and, before that, taught and evaluated computer science education at Montclair State University – where I got my BS and MS in Computer Science. I'm the organizer of <a href="http://jerseyscript.github.io">JerseyScript</a>, a front-end developer meetup based in New Jersey – one of several ventures I'm involved in to attract and retain more people in the web development community.</p>
+    <div class="right">
+      <ul>
+        <li><a href="/art">look at my ~*ART*~</a></li>
+        <li><a href="http://society6.com/jennmoneydollars">BUY THINGS <img src="assets/dollar.gif" style="height:30px;" alt="$$$" /></a></li>
+        <li><a href="/downloads">cool <img src="assets/free.gif" style="height:30px;" alt="free" /> downloads!</a></li>
+      </ul>
+    </div><p>In a past life, I was a senior front-end developer at the <a href="http://stats.nba.com">NBA</a> and, before that, taught and evaluated computer science education at Montclair State University – where I got my BS and MS in Computer Science. I'm the organizer of <a href="http://jerseyscript.github.io">JerseyScript</a>, a front-end developer meetup based in New Jersey – one of several ventures I'm involved in to attract and retain more people in the web development community.</p>
+    
+    
 
     <p>Lately I've been focusing on making tools to teach and facilitate the creation and knowledge of art and code, <a href="http://saidby.jennschiffer.com">speaking about and teaching</a> web development all over the place, and <a href="https://medium.com/@jennschiffer/latest">trying to help my peers take themselves a <em>little</em> less seriously</a>.</p>
 
@@ -63,7 +73,6 @@
 	      <li><a href="http://dhtmlconf.com">dhtmlconf</a> a very important conference™</li>
         <li><a href="http://github.com/jennschiffer">github.com/jennschiffer</a> my open source code lies here</li>
         <li><a href="http://codepen.io/jennschiffer">codepen.io/jennschiffer</a> i mess around with css and js here</li>
-        <li><a href="http://saidby.jennschiffer.com">said by jenn schiffer</a> all the slides from my conf talks</li>
       </ul>
     </section>
 
