@@ -14,6 +14,7 @@
     #credits ol { list-style: none; padding: 0; }
     footer { clear: both; }
   </style>
+  <link rel="stylesheet" href="../assets/lib/prism.css" />
 </head>
 <body>
 
@@ -30,21 +31,111 @@
   
     <h3>Abstract</h3>
     
-    <p>PXON <em>(pronounced like "picks on" as in "I hate it that Jenn always 'picks on' me."<sup id="ref-1"><a href="#cite-1">1</a></sup>)</em> is a proposed standard, which no one needs or even asked for, of the representation of pixel art using <abbr title="JavaScript Object Notation"><a href="http://json.org/">JSON</a></abbr>. It provides the means for both lightweight data-interchange and the object-oriented creation of pixel art. =Yes, I'm serious.</p>
+    <p>PXON <em>(pronounced like "picks on" as in "I hate it that Jenn always 'picks on' me."<sup id="ref-1"><a href="#cite-1">1</a></sup>)</em> is a proposed standard, which no one needs or even asked for, of the representation of pixel art using <abbr title="JavaScript Object Notation"><a href="http://json.org/">JSON</a></abbr> and properties of the <a href="http://www.w3.org/2003/12/exif/"><abbr title="Exchangeable image file format">Exif</abbr> <abbr title="Resource Description Framework">RDF</abbr> schema</a>. It provides the means for both lightweight data-interchange and the object-oriented creation of pixel art. </p>
+    
+    <h3>Structure</h3>
+    
+    <pre><code class="language-javascript">{
+  exif: {
+    "software"          : "",
+    "artist"            : "",
+    "imageDescription"  : "",
+    "userComment"       : "",
+    "copyright"         : "",
+    "dateTime"          : ""
+  },
+  pxif: {
+    "pixels"  : [
+      {
+        "xPos"  : 0,
+        "yPos"  : 0,
+        "color" : "",
+        "size"  : 0
+      }
+    ],
+    "dataURL" : ""
+  }     
+}</code></pre>
+    
+    <h3>Example</h3>
+    
+    <pre><code class="language-javascript">{
+  "exif": {
+    "software": "http://august.today",
+    "artist": "jenn schiffer",
+    "imageDescription": "smile",
+    "userComment": "an example pixel drawing to show off pxon",
+    "copyright": "jenn schiffer 2015",
+    "dateTime": "Tue Sep 08 2015 20:00:15 GMT-0400 (EDT)"
+  },
+  "pxif": {
+    "pixels": [
+      {
+        "xPos": 75,
+        "yPos": 69,
+        "color": "rgba(0, 0, 0, 1)",
+        "size": 15
+      },
+      {
+        "xPos": 80,
+        "yPos": 84,
+        "color": "rgba(0, 0, 0, 1)",
+        "size": 15
+      },
+      {
+        "xPos": 96,
+        "yPos": 82,
+        "color": "rgba(0, 0, 0, 1)",
+        "size": 15
+      },
+      {
+        "xPos": 110,
+        "yPos": 83,
+        "color": "rgba(0, 0, 0, 1)",
+        "size": 15
+      },
+      {
+        "xPos": 129,
+        "yPos": 72,
+        "color": "rgba(0, 0, 0, 1)",
+        "size": 15
+      },
+      {
+        "xPos": 88,
+        "yPos": 40,
+        "color": "rgba(0, 0, 0, 1)",
+        "size": 15
+      },
+      {
+        "xPos": 112,
+        "yPos": 38,
+        "color": "rgba(0, 0, 0, 1)",
+        "size": 15
+      },
+      {
+        "xPos": 97,
+        "yPos": 57,
+        "color": "rgba(0, 0, 0, 1)",
+        "size": 15
+      }
+    ],
+    "dataURL": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAy8AAALGCAYAAABMEa7OAAAJyElEQVR4nO3XQQoDQQwDwf3/p5MvOCzByKqCOQ+6uZ8HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOCfPi9e4r8AAEAo8QIAAEQQLwAAQATxAgAARBAvAABABPECAABEEC8AAEAE8QIAAEQQLwAAQATxAgAARBAvAABABPECAABEEC8AAEAE8QIAAEQQLwAAwHkCBAAAiCBeAACACOIFAACIIF4AAIAI4gUAAIggXgAAgAjiBQAAiCBeAACACOIFAACIIF4AAIAI4gUAAIggXgAAgAjiBQAAiCBeAACACOIFAAD4SVtEtO0FAIAz2o75tr0AAHBG2zHfthcAAM5oO+bb9gIAwBltx3zbXgAAOKPtmG/bCwAAZ7Qd8217AQDgjLZjvm0vAACc0XbMt+0FAIAz2o75tr0AAHBG2zHfthcAAM5oO+bb9gIAwBltx3zbXgAAOKPtmG/bCwAAZ7Qd8217AQCA510IbD0AAKDQdoiIFwAAYGQ7RMQLAAAwsh0i4gUAABjZDhHxAgAAjGyHiHgBAABGtkNEvAAAACPbISJeAACAke0QES8AAMDIdoiIFwAAYGQ7RMQLAAAwsh0i4gUAABjZDhHxAgAAjGyHiHgBAABGtkNEvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwKIvLAIBYv9X/6YAAAAASUVORK5CYII="
+  }
+}</code></pre>
     
     <h3>To do</h3>
     
     <ul>
-      <li>set up syntax highlighting - prism? highlight?</li>
-      <li>show objects</li>
-      <li>outline/list what parts of a pixel image are</li>
+      <li>better explanation</li>
+      <li>list apps using pxon</li>
     </ul>
     
     <section id="credits">
-      <h3>Credits</h3>
+      <h3>Citation and credits</h3>
       
       <ol>
         <li><sup id="cite-1"><a href="#ref-1">[1]</a></sup> quote by <a href="http://twitter.com/ajpiano">Adam J. Sontag</a></li>
+        <li>syntax highlighting courtesy of <a href="http://prismjs.com">Prism</a></li>
       </ol>
     </section>
     
@@ -54,6 +145,7 @@
     <p>&copy; 2015 jenn schiffer</p>
   </footer>
 
+  <script type="text/javascript" src="../assets/lib/prism.js"></script>
   <script type="text/javascript">
     (function(){
       var neonColors = [
