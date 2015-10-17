@@ -51,8 +51,8 @@
     <p><code>pxif</code> is the pixel art spin of <code>exif</code>, in essense it is unique to pixel art and breaks down the image beyond it's typical metadata and focuses on the individual strokes and drawings of the pixels within the image. The first property, <code>pixels</code> is an array of "pixel" objects representing the pixels drawn in the image. Because it is a new idea in this format, the list of properties is fluid and ever changing at the moment. They are:</p>
     
     <ul>
-      <li><code>xPos</code> - (integer) the x coordinate position of the pixel</li>
-      <li><code>yPos</code> - (integer) the y coordinate position of the pixel</li>
+      <li><code>x</code> - (integer) the x coordinate position of the pixel</li>
+      <li><code>y</code> - (integer) the y coordinate position of the pixel</li>
       <li><code>color</code> - (string) the color of the pixel</li>
       <li><code>size</code> - (integer) the size in px of the pixel</li>
     </ul>
@@ -71,8 +71,8 @@
   "pxif": {
     "pixels"  : [
       {
-        "xPos"  : 0,
-        "yPos"  : 0,
+        "x"  : 0,
+        "y"  : 0,
         "color" : "",
         "size"  : 0
       }
@@ -95,50 +95,50 @@
   "pxif": {
     "pixels": [
       {
-        "xPos": 75,
-        "yPos": 69,
+        "x": 75,
+        "y": 69,
         "color": "rgba(0, 0, 0, 1)",
         "size": 15
       },
       {
-        "xPos": 80,
-        "yPos": 84,
+        "x": 80,
+        "y": 84,
         "color": "rgba(0, 0, 0, 1)",
         "size": 15
       },
       {
-        "xPos": 96,
-        "yPos": 82,
+        "x": 96,
+        "y": 82,
         "color": "rgba(0, 0, 0, 1)",
         "size": 15
       },
       {
-        "xPos": 110,
-        "yPos": 83,
+        "x": 110,
+        "y": 83,
         "color": "rgba(0, 0, 0, 1)",
         "size": 15
       },
       {
-        "xPos": 129,
-        "yPos": 72,
+        "x": 129,
+        "y": 72,
         "color": "rgba(0, 0, 0, 1)",
         "size": 15
       },
       {
-        "xPos": 88,
-        "yPos": 40,
+        "x": 88,
+        "y": 40,
         "color": "rgba(0, 0, 0, 1)",
         "size": 15
       },
       {
-        "xPos": 112,
-        "yPos": 38,
+        "x": 112,
+        "y": 38,
         "color": "rgba(0, 0, 0, 1)",
         "size": 15
       },
       {
-        "xPos": 97,
-        "yPos": 57,
+        "x": 97,
+        "y": 57,
         "color": "rgba(0, 0, 0, 1)",
         "size": 15
       }
@@ -152,6 +152,13 @@
     <ul>
       <li><a href="http://august.today">august.today</a> - a pxon playground</li>
       <li><a href="http://make8bitart.com">make8bitart.com</a> - pixel art painting app</li>
+    </ul>
+    
+    <h3>changelog</h3>
+    
+    <ul>
+      <li>v. 0.0.2 change pxif properties xPos and yPos to x and y</li>
+      <li>v. 0.0.1 initial draft</li>
     </ul>
     
     <section id="credits">
