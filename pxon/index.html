@@ -4,7 +4,7 @@
   <title>jennmoneydollars &bull; pxon</title>
   <style>
     html { margin: 0; padding: 0; border-top: 10px solid cyan; }
-    body { width: 100%; max-width: 900px; margin: 20px auto; font-family: monospace; font-size: 16px; line-height: 1.5em; }
+    body { width: 100%; max-width: 1200px; margin: 20px auto; font-family: monospace; font-size: 16px; line-height: 1.5em; }
     a { color: blue; text-decoration: none; }
     h1 { font-size: 4em; }
     h1 em { color: magenta; font-size: .3em; }
@@ -23,22 +23,22 @@
   <header>
     <h1>Jenn Schiffer<em> engineer, artist, lasagna, writer</em></h1>
   </header>
-  
+
   <section id="breadcrumbs">
     &lt;--- <a href="/">go back home</a>
   </section>
 
   <div id="main">
     <h2>pxon <small>ie. "pixel art object notation"</small></h2>
-  
+
     <h3>abstract</h3>
-    
+
     <p>PXON <em>(pronounced like "picks on" as in "I hate it that Jenn always 'picks on' me."<sup id="ref-1"><a href="#cite-1">1</a></sup>)</em> is a proposed standard, which no one needs or even asked for, of the representation of pixel art using <abbr title="JavaScript Object Notation"><a href="http://json.org/">JSON</a></abbr> and properties of the <a href="http://www.w3.org/2003/12/exif/"><abbr title="Exchangeable image file format">Exif</abbr> <abbr title="Resource Description Framework">RDF</abbr> schema</a>. It provides the means for both lightweight data-interchange and the object-oriented creation of pixel art. </p>
-    
+
     <h3>structure</h3>
-    
+
     <p>It's just JSON. But there are two objects, <abbr title="exchangeable image file format"><code>exif</code></abbr> and <abbr title="pixel image file format"><code>pxif</code></abbr>. <code>exif</code> has any properties defined by the Exif RDF schema (mention and link in the abstract). For the sake of creating pixel art, many of these properties are not necessary or even applicable. They have been narrowed down to:</p>
-    
+
     <ul>
       <li><code>software</code>: (string) the software used to create/export the pxon</li>
       <li><code>artist</code>: (string) the identity of the artist of the work the pxon represents</li>
@@ -47,18 +47,18 @@
       <li><code>copyright</code>: (string) the copyright of the image</li>
       <li><code>dateTime</code>: (string) the date/Time the pxon was initially generated</li>
     </ul>
-    
+
     <p><code>pxif</code> is the pixel art spin of <code>exif</code>, in essense it is unique to pixel art and breaks down the image beyond it's typical metadata and focuses on the individual strokes and drawings of the pixels within the image. The first property, <code>pixels</code> is an array of "pixel" objects representing the pixels drawn in the image. Because it is a new idea in this format, the list of properties is fluid and ever changing at the moment. They are:</p>
-    
+
     <ul>
       <li><code>x</code> - (integer) the x coordinate position of the pixel</li>
       <li><code>y</code> - (integer) the y coordinate position of the pixel</li>
       <li><code>color</code> - (string) the color of the pixel</li>
       <li><code>size</code> - (integer) the size in px of the pixel</li>
     </ul>
-    
+
     <p>A <code>dataURL</code> property has a string value of the dataURL of the canvas the pixel art had when pxon is exported. This may be helpful for drawing the inital image on pxon import but it may be best to just redraw each pixel in the <code>pixels</code> array. Until the apps using pxon are refined, it's best to keep this property here I believe.</p>
-    
+
     <pre><code class="language-javascript">{
   "exif": {
     "software"          : "",
@@ -78,11 +78,11 @@
       }
     ],
     "dataURL" : ""
-  }     
+  }
 }</code></pre>
-    
+
     <h3>example</h3>
-    
+
     <pre><code class="language-javascript">{
   "exif": {
     "software": "http://august.today",
@@ -146,30 +146,30 @@
     "dataURL": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAy8AAALGCAYAAABMEa7OAAAJyElEQVR4nO3XQQoDQQwDwf3/p5MvOCzByKqCOQ+6uZ8HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOCfPi9e4r8AAEAo8QIAAEQQLwAAQATxAgAARBAvAABABPECAABEEC8AAEAE8QIAAEQQLwAAQATxAgAARBAvAABABPECAABEEC8AAEAE8QIAAEQQLwAAwHkCBAAAiCBeAACACOIFAACIIF4AAIAI4gUAAIggXgAAgAjiBQAAiCBeAACACOIFAACIIF4AAIAI4gUAAIggXgAAgAjiBQAAiCBeAACACOIFAAD4SVtEtO0FAIAz2o75tr0AAHBG2zHfthcAAM5oO+bb9gIAwBltx3zbXgAAOKPtmG/bCwAAZ7Qd8217AQDgjLZjvm0vAACc0XbMt+0FAIAz2o75tr0AAHBG2zHfthcAAM5oO+bb9gIAwBltx3zbXgAAOKPtmG/bCwAAZ7Qd8217AQCA510IbD0AAKDQdoiIFwAAYGQ7RMQLAAAwsh0i4gUAABjZDhHxAgAAjGyHiHgBAABGtkNEvAAAACPbISJeAACAke0QES8AAMDIdoiIFwAAYGQ7RMQLAAAwsh0i4gUAABjZDhHxAgAAjGyHiHgBAABGtkNEvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwKIvLAIBYv9X/6YAAAAASUVORK5CYII="
   }
 }</code></pre>
-    
+
     <h3>apps using pxon</h3>
-    
+
     <ul>
       <li><a href="http://august.today">august.today</a> - a pxon playground</li>
       <li><a href="http://make8bitart.com">make8bitart.com</a> - pixel art painting app</li>
     </ul>
-    
+
     <h3>changelog</h3>
-    
+
     <ul>
       <li>v. 0.0.2 change pxif properties xPos and yPos to x and y</li>
       <li>v. 0.0.1 initial draft</li>
     </ul>
-    
+
     <section id="credits">
       <h3>citation and credits</h3>
-      
+
       <ol>
         <li><sup id="cite-1"><a href="#ref-1">[1]</a></sup> quote by <a href="http://twitter.com/ajpiano">Adam J. Sontag</a></li>
         <li>syntax highlighting courtesy of <a href="http://prismjs.com">Prism</a></li>
       </ol>
     </section>
-    
+
   </div>
 
   <footer>
