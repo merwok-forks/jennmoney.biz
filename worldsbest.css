@@ -1,0 +1,25 @@
+/* worlds best css */
+* { box-sizing: border-box; }
+html { margin: 0; padding: 0; border: 10px solid cyan; font-size: 1.5em; }
+body { margin: 0 auto; padding: 2em; width: 100%; max-width: 1000px; font-family: monospace; font-size: 1em; }
+a { color: blue; text-decoration: underline; }
+footer { font-size: .8em; margin: 4em 0 0; text-align: right; }
+p { line-height: 1.5em; }
+
+.float-left { float: left; margin: auto 1em 1em auto; }
+.full-width { width: 100%; }
+
+#art section { margin: 2em 0 4em; }
+#art h2 { font-size: 2em; font-weight: normal; }
+
+h1 em { color: magenta; }
+#links ul { padding: 0; }
+#links li { margin: 1em 0; }
+#links a { padding: .3em .5em; display: inline-block; }
+#links h3 { text-align: center; }
+
+#links section { margin: 4em 0; }
+#links .webring li { display: inline-block; margin: .4em 0; }
+
+.fire,
+.hammertime { height: 50px; vertical-align: middle; }
