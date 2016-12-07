@@ -44,10 +44,11 @@
   (function(){
     var colors = ['red','blue','yellow'],
         minRowCols = 4,
-        maxRowCols = 6,
+        maxRowCols = 8,
         recursionChance = 0.2,
         recursionDepreciationRate = 0.05,
-        styleChance = 0.3;
+        styleChance = 0.3,
+        intervalTime = 5000;
 
     var generateMondrianTable = function(min, max, chance){
       var numRows = Math.floor(Math.random() * (max + 1 - min) + min);
@@ -99,14 +100,23 @@
       return bgColor;
     };
 
-    var frame = document.getElementById('frame');
-    var newTable = generateMondrianTable(minRowCols, maxRowCols, recursionChance);
-    frame.appendChild(newTable);
+    var refreshFrame = function() {
+      frame.innerHTML = '';
+      var newTable = generateMondrianTable(minRowCols, maxRowCols, recursionChance);
+      frame.appendChild(newTable);
 
-    var allCells = [].slice.call(document.getElementsByTagName('td'));
-    allCells.forEach(function(cell) {
-      cell.style.backgroundColor = getCellBackgroundColor();
-    });
+      var allCells = [].slice.call(document.getElementsByTagName('td'));
+      allCells.forEach(function(cell) {
+        cell.style.backgroundColor = getCellBackgroundColor();
+      });
+    };
+
+    var frame = document.getElementById('frame');
+    refreshFrame();
+
+    window.setInterval(function(){
+      refreshFrame();
+    }, intervalTime);
 
   })();
   </script>
