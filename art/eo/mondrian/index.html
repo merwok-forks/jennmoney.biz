@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>mondrian generator</title>
+  <style type="text/css">
+    html { background-color: #fff; margin: 0; padding: 0; }
+    body { background-color: #fff; margin: 0; padding: 0;}
+    table { width: 100%; height: 100%; border: 2px solid black; }
+    td { border: 3px solid black;  }
+    table table { border: 0; height: 100%; }
+    #frame > table { width: 100%; height: 100vh; }
+  </style>
+</head>
+<body>
+  <div id="frame"></div>
+
+  <script type="text/javascript">
+  (function(){
+    var colors = ['red','blue','yellow'],
+        minRowCols = 4,
+        maxRowCols = 6,
+        recursionChance = 0.2,
+        recursionDepreciationRate = 0.05,
+        styleChance = 0.3;
+
+    var generateMondrianTable = function(min, max, chance){
+      var numRows = Math.floor(Math.random() * (max + 1 - min) + min);
+      var numCols = Math.floor(Math.random() * (max + 1 - min) + min);
+
+      var thisTable = document.createElement('table');
+      thisTable.setAttribute('border', '0');
+      thisTable.setAttribute('cellpadding', '0');
+      thisTable.setAttribute('cellspacing', '0');
+
+      for ( var i = 0; i < numRows; i++ ) {
+        var newRow = document.createElement('tr');
+        thisTable.appendChild(newRow);
+      }
+
+      var allRows = [].slice.call(thisTable.getElementsByTagName('tr'));
+      allRows.forEach(function(element){
+        for ( var j = 0; j < numCols; j++ ) {
+          var newCell = document.createElement('td');
+          element.appendChild(newCell);
+        }
+      });
+
+      var allCells = [].slice.call(thisTable.getElementsByTagName('td'));
+      allCells.forEach(function(element){
+        var feelingLucky = (Math.random() < chance) ? true : false;
+        if ( feelingLucky ) {
+          var newerTable = generateMondrianTable(1, 3, chance * recursionDepreciationRate);
+          element.appendChild(newerTable);
+          element.style.border = 'none';
+        }
+      });
+
+      return thisTable;
+    };
+
+    var getCellBackgroundColor = function(){
+      var setToPrimaryColors = (Math.random() < styleChance) ? true : false;
+      var bgColor;
+
+      // set random background color or white
+      if ( setToPrimaryColors ) {
+        bgColor = colors[Math.floor(Math.random() * (colors.length + 1))];
+      }
+      else {
+        bgColor = 'white';
+      }
+
+      return bgColor;
+    };
+
+    var frame = document.getElementById('frame');
+    var newTable = generateMondrianTable(minRowCols, maxRowCols, recursionChance);
+    frame.appendChild(newTable);
+
+    var allCells = [].slice.call(document.getElementsByTagName('td'));
+    allCells.forEach(function(cell) {
+      cell.style.backgroundColor = getCellBackgroundColor();
+    });
+
+  })();
+  </script>
+</body>
+</html>
