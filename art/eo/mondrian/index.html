@@ -5,7 +5,7 @@
   <style type="text/css">
     html { background-color: #fff; margin: 0; padding: 0; }
     body { background-color: #fff; margin: 0; padding: 0;}
-    table { width: 100%; height: 100%; border: 2px solid black; border-spacing: 0; }
+    table { width: 100%; height: 100%; border: 2px solid black; background-color: #000; }
     td { border: 9px solid black; border-spacing: 0; }
     table table { border: 0; height: 100%; }
     #frame > table { width: 100%; height: 100vh; }
@@ -48,7 +48,7 @@
         recursionChance = 0.2,
         recursionDepreciationRate = 0.05,
         styleChance = 0.3,
-        intervalTime = 5000;
+        intervalTime = 50000;
 
     var generateMondrianTable = function(min, max, chance){
       var numRows = Math.floor(Math.random() * (max + 1 - min) + min);
@@ -87,14 +87,10 @@
 
     var getCellBackgroundColor = function(){
       var setToPrimaryColors = (Math.random() < styleChance) ? true : false;
-      var bgColor;
+      var bgColor = 'white';
 
-      // set random background color or white
       if ( setToPrimaryColors ) {
-        bgColor = colors[Math.floor(Math.random() * (colors.length + 1))];
-      }
-      else {
-        bgColor = 'white';
+        bgColor = colors[Math.floor(Math.random() * colors.length)];
       }
 
       return bgColor;
