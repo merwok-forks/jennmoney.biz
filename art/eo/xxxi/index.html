@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>time well spent, or "i do not own this song, all rights go to the owners of this song"</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="height=1920, width=1080">
+</head>
+<body>
+
+<!-- this was made by
+  /\_\     __    ___     ___
+  \/\ \  /'__`\/' _ `\ /' _ `\
+   \ \ \/\  __//\ \/\ \/\ \/\ \
+   _\ \ \ \____\ \_\ \_\ \_\ \_\
+  /\ \_\ \/____/\/_/\/_/\/_/\/_/
+  \ \____/
+   \/___/
+   ___ ___     ___     ___      __   __  __
+ /' __` __`\  / __`\ /' _ `\  /'__`\/\ \/\ \
+ /\ \/\ \/\ \/\ \L\ \/\ \/\ \/\  __/\ \ \_\ \
+ \ \_\ \_\ \_\ \____/\ \_\ \_\ \____\\/`____ \
+  \/_/\/_/\/_/\/___/  \/_/\/_/\/____/ `/___/> \
+                                         /\___/
+                                         \/__/
+   __          ___    ___
+  /\ \        /\_ \  /\_ \
+  \_\ \    ___\//\ \ \//\ \      __     _ __   ____
+  /'_` \  / __`\\ \ \  \ \ \   /'__`\  /\`'__\/',__\
+ /\ \L\ \/\ \L\ \\_\ \_ \_\ \_/\ \L\.\_\ \ \//\__, `\
+ \ \___,_\ \____//\____\/\____\ \__/.\_\\ \_\\/\____/
+  \/__,_ /\/___/ \/____/\/____/\/__/\/_/ \/_/ \/___/
+
+  jennmoney.biz -->
+
+  <div id="frame">
+    <img id="me" src="assets/glitch.gif" />
+    <div id="karaoke"></div>
+    <div id="important"><pre>
+hi so while i have your attention
+
+   i want to talk about some things that you
+      probably have heard a lot about over the past
+      couple of weeks
+      and that have been spinning in my head for some time
+      there's a lot on my mind and i've learned a lot
+      over the past several months but i don't know
+      everything but i'm trying
+
+like how a lot of us are mad and scared
+and    ~* nazis are getting punched *~
+but still getting book deals and university talk slots
+
+   ---- black lives matter ---
+ --- stop killing trans people ---
+
+take away nazi voices with physical and digital force
+ur not pro-life if you don't care what happens after birth
+
+       keep your policies out of my vagina
+but don't make my vagina a symbol of the movement
+  i'm not having the best time with my reproductive health
+      at the moment. so i don't really want to identify
+                with my vagina. i think i'll be ok? anyway
+
+                  *** not all women have vaginas ***
+                 *** #notallmen don't have vaginas ***
+
+                 people deserve a fair wage to live!
+                and you cannot claim food stamps and welfare
+                  are abused and should be eradicated
+                    when corporations see those programs
+                   existing as a fair
+                   reason not to pay fair wages
+
+               and if those programs go away,
+               don't expect them to care lmao jfc
+
+                  low wages and bad food and
+                  lack of access to clean water
+                       are killing our country
+                and it's already past the
+                  time to stop ignoring
+                   how these are symptoms
+                   of systemic racism
+                   W H I T E S U P R E M A C Y
+                   and lack of care of the poor
+
+                   these are race and class issues
+
+                    IT'S FUCKING 2017
+
+                    pro-life is anti-feminist
+
+    stop arguing about who should have won (bernie) and
+     start gathering and making literal noise
+
+      STOP LETTING SILICON VALLEY THINK THEY DRIVE THIS
+      COUNTRY IN ANY POSITIVE WAY LOL
+
+      LISTEN TO BLACK WOMEN
+
+      STOP WHITEWASHING AND CIS-WASHING HOLLYWOOD FILMS
+      AND ACTIVIST MOVEMENTS
+
+      and if you ever meet a man named bob baron, tell him
+     he's a sexist piece of shit and i hope his company's
+           product fails. pls like + subscribe
+
+           anyway, this one's called WONDERWALL...
+</pre></div>
+  </div>
+
+  <script async src="https://www.youtube.com/iframe_api"></script>
+  <script type="text/javascript">
+    function onYouTubeIframeAPIReady() {
+      var playerOptions = {
+        width: 980,
+        height: 765,
+        playerVars: {
+          autoplay: 1,
+          controls: 1,
+          showinfo: 0,
+          modestbranding: 1,
+          loop: 1,
+          fs: 0,
+          cc_load_policy: 1,
+          iv_load_policy: 3,
+          autohide: 1,
+          listType: 'playlist',
+          list: 'PL0hmC7jyckDs1tAY7XmtaP5ijiewjfDxD',
+        },
+        /* events: {
+          onReady: function(e) {
+            e.target.mute();
+          }
+        } */
+      };
+
+      playerOptions.playerVars.index = Math.floor(Math.random() * 40);
+      var player1 = new YT.Player('karaoke', playerOptions);
+    }
+  </script>
+  <script type="text/javascript">
+    (function(){
+      var frame = document.getElementById('frame');
+
+      /* helper functions */
+      var getRandomNumber = function(min, max) {
+        return Math.floor(Math.random() * (max - min) + min);
+      };
+
+      var getUniqueRandomNumberArray = function(min, max, length) {
+        var arr = [];
+        for (var i = 0; i < length; i++) {
+          var numberChosen = false;
+          do {
+            var randNum = getRandomNumber(min, max);
+            if (arr.indexOf(randNum) === -1) {
+              arr.push(randNum);
+              numberChosen = true;
+            }
+          }
+          while ( numberChosen === false )
+        }
+        return arr;
+      };
+
+      var setGradient = function(elem) {
+        var randNumArray = getUniqueRandomNumberArray(0, 256, 12);
+        elem.style.background = '-webkit-linear-gradient( 0deg, ' +
+          'rgb(' + randNumArray[0] + ', ' + randNumArray[1] + ', ' + randNumArray[2] + ')' +
+          ', ' +
+          'rgb(' + randNumArray[3] + ', ' + randNumArray[4] + ', ' + randNumArray[5] + ')' +
+          ', ' +
+          'rgb(' + randNumArray[6] + ', ' + randNumArray[7] + ', ' + randNumArray[8] + ')' +
+          ', ' +
+          'rgb(' + randNumArray[9] + ', ' + randNumArray[10] + ', ' + randNumArray[11] + ')' +
+          ')';
+      };
+
+      /* init drawing */
+      setGradient(frame);
+    })()
+  </script>
+
+  <script src="//pmetrics.performancing.com/js" type="text/javascript"></script>
+  <script type="text/javascript">try{ clicky.init(23177); }catch(e){}</script>
+  <noscript><p><img alt="Performancing Metrics" width="1" height="1" src="//pmetrics.performancing.com/23177ns.gif" /></p></noscript>
+</body>
+</html>
